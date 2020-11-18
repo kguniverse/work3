@@ -60,15 +60,15 @@ include CMakeFiles/work3.dir/flags.make
 CMakeFiles/work3.dir/main.cpp.o: CMakeFiles/work3.dir/flags.make
 CMakeFiles/work3.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/work3.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/work3.dir/main.cpp.o -c /Users/wangqiankai/projects/work3/main.cpp
+	/usr/local/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/work3.dir/main.cpp.o -c /Users/wangqiankai/projects/work3/main.cpp
 
 CMakeFiles/work3.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/work3.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangqiankai/projects/work3/main.cpp > CMakeFiles/work3.dir/main.cpp.i
+	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangqiankai/projects/work3/main.cpp > CMakeFiles/work3.dir/main.cpp.i
 
 CMakeFiles/work3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/work3.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangqiankai/projects/work3/main.cpp -o CMakeFiles/work3.dir/main.cpp.s
+	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangqiankai/projects/work3/main.cpp -o CMakeFiles/work3.dir/main.cpp.s
 
 # Object files for target work3
 work3_OBJECTS = \
