@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
+/Users/wangqiankai/projects/work3/BM.cpp
+BM.h
+/Users/wangqiankai/projects/work3/BM.h
+bits/stdc++.h
+-
+
+/Users/wangqiankai/projects/work3/BM.h
+vector
+-
+string
+-
+
+/Users/wangqiankai/projects/work3/htree.cpp
+bits/stdc++.h
+-
+htree.h
+/Users/wangqiankai/projects/work3/htree.h
+
+/Users/wangqiankai/projects/work3/htree.h
+string
+-
+unordered_map
+-
+
 /Users/wangqiankai/projects/work3/main.cpp
 bits/stdc++.h
 -
+htree.h
+/Users/wangqiankai/projects/work3/htree.h
 

@@ -48,14 +48,14 @@ public:
 
     void build();
     std::string decode(std::string s);
-    void stistic(std::string s);
+    void stistic(const std::string& s);
 };
 
 class h_code{
-public:
+private:
     std::unordered_map<char, std::string> dic;
-
-    void find(h_tree h, int s, std::string& aws);
+public:
+    static void find(h_tree h, int s, std::string& aws);
     void build(h_tree h);
 };
 #endif //WORK3_HTREE_H

@@ -50,7 +50,7 @@ string h_tree::decode(string s){
     }
     return ret;
 }
-void h_tree::stistic(string s){
+void h_tree::stistic(const string& s){
     int t = 0;
     for(auto i : s){
         if(!frequency[i]) t++;
