@@ -26,7 +26,7 @@ struct treenode{
 map<char, string> dic;
 class h_tree{
     private:
-    int frequency[30];
+    int frequency[130];
     int n;
     treenode* root;
     treenode* body;
@@ -35,8 +35,21 @@ class h_tree{
     h_tree(int q){
         n = q;
         body = (treenode*)malloc(sizeof(treenode) * (n + 1));
+        for(int i = 1; i <= n; i++){
+            (body + i) -> ch = i;
+            // (body + i) -> weight = frequency[i];
+            (body + i) -> lson = NULL;
+            (body + i) -> rson = NULL;
+            (body + i) -> par = NULL;
+        }
         memset(in_tree, sizeof(in_tree), true);
     }
+
+    int size(){ return n; }
+    treenode* find_root() { return root; }
+    treenode* find_node(int i) { return body + i; }
+
+
     void build(){
         priority_queue<treenode*> q;
         for(int i = 1; i <= n; i++){
@@ -92,7 +105,27 @@ class h_tree{
 class h_code{
     public:
     map<char, string> dic;
-
+    void find(h_tree h, int s, string& aws){
+        treenode* rec = h.find_node(s);
+        treenode* root = h.find_root();
+        while(rec != root){
+            treenode* p = rec -> par;
+            if(p -> lson == rec){
+                aws.pb('0');
+            } else {
+                aws.pb('1');
+            }
+            rec = p;
+        }
+    }
+    void build(h_tree h){
+        for(int i = 1; i <= h.size(); i++){
+            string aws;
+            find(h, i, aws);
+            aws.reserve();
+            dic[h.find_node(i) -> ch] = aws;
+        }
+    }
 };
 
 string read(){
@@ -113,6 +146,5 @@ int main(){
     int n;
     cin >> n;
     h_tree h(n);
-    h.build();  
-
+    h.build();
 }
