@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<unordered_map>
 using namespace std;
 #define pb push_back
 
@@ -141,10 +142,26 @@ string read(){
     return ret;
 }
 //TODO: prepare search function
+class BM{
+    private:
+    int n;
+    vector<int> bad_char;
+    vector<int> good_char;
+    public:
+    void generate(string s){
+        unordered_map<char, int> dic;
+        for(int i = 0; i <= 255; i++) bad_char.pb(-1);
+        for(int i = 0; i < s.length(); i++){
+            bad_char[s[i]] = i;
+        }
+    }
+    //TODO: generate the good mode
+};
 int main(){
     string readin = read();
     int n;
     cin >> n;
     h_tree h(n);
+    h.stistic(readin);
     h.build();
 }
