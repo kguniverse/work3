@@ -32,7 +32,8 @@ class h_tree{
     treenode* body;
     bool in_tree[130];
     public:
-    h_tree(){
+    h_tree(int q){
+        n = q;
         body = (treenode*)malloc(sizeof(treenode) * (n + 1));
         memset(in_tree, sizeof(in_tree), true);
     }
@@ -98,7 +99,7 @@ string read(){
     string ret;
     ifstream txtin("a.txt");
     if(!txtin.is_open()) cout << "未能打开文件" << endl;
-    getline(txtin, ret);
+    getline(txtin, ret, '\n');
     while(!txtin.eof()){
         string cd;
         getline(txtin, cd);
@@ -109,8 +110,9 @@ string read(){
 //TODO: prepare search function
 int main(){
     string readin = read();
-    h_tree h;
-    
-    h.build();
+    int n;
+    cin >> n;
+    h_tree h(n);
+    h.build();  
 
 }
