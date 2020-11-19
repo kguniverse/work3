@@ -1,133 +1,7 @@
 #include<bits/stdc++.h>
-#include<unordered_map>
+#include"htree.h"
 using namespace std;
 #define pb push_back
-
-struct treenode{
-    char ch;
-    int weight;
-    treenode* lson;
-    treenode* rson;
-    treenode* par;
-    treenode(){
-        ch = 0;
-        lson = NULL;
-        rson = NULL;
-    }
-    treenode(char c, int w){
-        ch = c;
-        lson = NULL;
-        rson = NULL;
-    }
-    bool operator<(const treenode& a){
-        if(weight == a.weight) return ch > a.ch;
-        return weight > a.weight;
-    }
-};
-map<char, string> dic;
-class h_tree{
-    private:
-    int frequency[130];
-    int n;
-    treenode* root;
-    treenode* body;
-    bool in_tree[130];
-    public:
-    h_tree(int q){
-        n = q;
-        body = (treenode*)malloc(sizeof(treenode) * (n + 1));
-        for(int i = 1; i <= n; i++){
-            (body + i) -> ch = i;
-            // (body + i) -> weight = frequency[i];
-            (body + i) -> lson = NULL;
-            (body + i) -> rson = NULL;
-            (body + i) -> par = NULL;
-        }
-        memset(in_tree, sizeof(in_tree), true);
-    }
-
-    int size(){ return n; }
-    treenode* find_root() { return root; }
-    treenode* find_node(int i) { return body + i; }
-
-
-    void build(){
-        priority_queue<treenode*> q;
-        for(int i = 1; i <= n; i++){
-            q.push(body + i);
-        }
-        while(1){
-            treenode *s1, *s2;
-            if(!q.empty()){
-                s1 = q.top();
-                q.pop();
-            }
-            if(!q.empty()){
-                s2 = q.top();
-                q.pop();
-            } else{
-                root = s1;
-                break;
-            }
-            treenode* s0 = (treenode*)malloc(sizeof(treenode));
-            s0 -> ch = 0;
-            s0 -> lson = s1;
-            s0 -> rson = s2;
-            s1 -> par = s0;
-            s2 -> par = s0;
-            s0 -> weight = s1 -> weight + s2 -> weight;
-            q.push(s0);
-        }
-    }
-    string decode(string s){
-        string ret;
-        treenode* rec = root;
-        for(auto i : s){
-            if(i == '1'){
-                rec = rec -> rson;
-            } else{
-                rec = rec -> lson;
-            }
-            if(rec -> ch){
-                ret.pb(rec->ch);
-                rec = root;
-            }
-        }
-        return ret;
-    }
-    void stistic(string s){
-        cout << "please input size:" << endl;
-        cin >> n;
-        for(auto i : s){
-            root[i - 'a' + 1].weight++;
-        }
-    }
-};
-class h_code{
-    public:
-    map<char, string> dic;
-    void find(h_tree h, int s, string& aws){
-        treenode* rec = h.find_node(s);
-        treenode* root = h.find_root();
-        while(rec != root){
-            treenode* p = rec -> par;
-            if(p -> lson == rec){
-                aws.pb('0');
-            } else {
-                aws.pb('1');
-            }
-            rec = p;
-        }
-    }
-    void build(h_tree h){
-        for(int i = 1; i <= h.size(); i++){
-            string aws;
-            find(h, i, aws);
-            aws.reserve();
-            dic[h.find_node(i) -> ch] = aws;
-        }
-    }
-};
 
 string read(){
     string ret;
@@ -137,31 +11,20 @@ string read(){
     while(!txtin.eof()){
         string cd;
         getline(txtin, cd);
-        ret = ret + '\n' + cd;
+        ret += '\n' + cd;
     }
     return ret;
 }
 //TODO: prepare search function
-class BM{
-    private:
-    int n;
-    vector<int> bad_char;
-    vector<int> good_char;
-    public:
-    void generate(string s){
-        unordered_map<char, int> dic;
-        for(int i = 0; i <= 255; i++) bad_char.pb(-1);
-        for(int i = 0; i < s.length(); i++){
-            bad_char[s[i]] = i;
-        }
-    }
-    //TODO: generate the good mode
-};
+
+
 int main(){
     string readin = read();
     int n;
     cin >> n;
-    h_tree h(n);
+    h_tree h;
     h.stistic(readin);
     h.build();
+    h_code H_table;
+    H_table.build(h);
 }

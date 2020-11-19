@@ -123,6 +123,60 @@ work3/fast:
 	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/build
 .PHONY : work3/fast
 
+BM.o: BM.cpp.o
+
+.PHONY : BM.o
+
+# target to build an object file
+BM.cpp.o:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/BM.cpp.o
+.PHONY : BM.cpp.o
+
+BM.i: BM.cpp.i
+
+.PHONY : BM.i
+
+# target to preprocess a source file
+BM.cpp.i:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/BM.cpp.i
+.PHONY : BM.cpp.i
+
+BM.s: BM.cpp.s
+
+.PHONY : BM.s
+
+# target to generate assembly for a file
+BM.cpp.s:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/BM.cpp.s
+.PHONY : BM.cpp.s
+
+htree.o: htree.cpp.o
+
+.PHONY : htree.o
+
+# target to build an object file
+htree.cpp.o:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/htree.cpp.o
+.PHONY : htree.cpp.o
+
+htree.i: htree.cpp.i
+
+.PHONY : htree.i
+
+# target to preprocess a source file
+htree.cpp.i:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/htree.cpp.i
+.PHONY : htree.cpp.i
+
+htree.s: htree.cpp.s
+
+.PHONY : htree.s
+
+# target to generate assembly for a file
+htree.cpp.s:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/htree.cpp.s
+.PHONY : htree.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... work3"
+	@echo "... BM.o"
+	@echo "... BM.i"
+	@echo "... BM.s"
+	@echo "... htree.o"
+	@echo "... htree.i"
+	@echo "... htree.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
