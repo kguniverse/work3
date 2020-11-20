@@ -7,12 +7,10 @@ using namespace std;
 #define pb push_back
 
 void h_tree::build(){
-    priority_queue<treenode*> q;
-    for(int i = 1; i <= n; i++){
-        q.push(body + i);
-    }
-    while(1){
-        treenode *s1, *s2;
+    priority_queue<treenode> q;
+    for(int i = 1; i <= n; i++){q.push(*(body + i));}
+    while(true){
+        treenode s1, s2;
         if(!q.empty()){
             s1 = q.top();
             q.pop();
@@ -21,20 +19,22 @@ void h_tree::build(){
             s2 = q.top();
             q.pop();
         } else{
-            root = s1;
+            root = s1.addr;
             break;
         }
-        treenode* s0 = (treenode*)malloc(sizeof(treenode));
+        //cout << (int)s1.ch << "  " << s1.weight << endl << (int)s2 . ch << "  " << s2.weight << endl << endl;
+        auto* s0 = (treenode*)malloc(sizeof(treenode));
         s0 -> ch = 0;
-        s0 -> lson = s1;
-        s0 -> rson = s2;
-        s1 -> par = s0;
-        s2 -> par = s0;
-        s0 -> weight = s1 -> weight + s2 -> weight;
-        q.push(s0);
+        s0 -> lson = s1.addr;
+        s0 -> rson = s2.addr;
+        s0 -> lson -> par = s0;
+        s0 -> rson -> par = s0;
+        s0 -> weight = s1.weight + s2.weight;
+        s0 -> addr = s0;
+        q.push(*s0);
     }
 }
-string h_tree::decode(string s){
+string h_tree::decode(const string& s){
     string ret;
     treenode* rec = root;
     for(auto i : s){
@@ -50,21 +50,22 @@ string h_tree::decode(string s){
     }
     return ret;
 }
-void h_tree::stistic(const string& s){
+void h_tree::statistic(const string& s){
     int t = 0;
     for(auto i : s){
         if(!frequency[i]) t++;
         frequency[i]++;
     }
-    n = t;
+    n = 255;
     body = (treenode*)malloc(sizeof(treenode) * (n + 1));
     for(int i = 1; i <= n; i++){
-        (body + i) -> ch = i;
+        (body + i) -> ch = (char)i;
         // (body + i) -> weight = frequency[i];
-        (body + i) -> lson = NULL;
-        (body + i) -> rson = NULL;
-        (body + i) -> par = NULL;
-        root[i].weight = frequency[i];
+        (body + i) -> lson = nullptr;
+        (body + i) -> rson = nullptr;
+        (body + i) -> par = nullptr;
+        (body + i) -> addr = (body + i);
+        body[i].weight = frequency[i];
     }
 }
 void h_code::find(h_tree h, int s, string& aws){

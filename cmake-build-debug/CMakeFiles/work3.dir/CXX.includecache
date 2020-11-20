@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/wangqiankai/projects/work3/BM.cpp
-BM.h
-/Users/wangqiankai/projects/work3/BM.h
-bits/stdc++.h
--
-
 /Users/wangqiankai/projects/work3/BM.h
 vector
 -
@@ -35,4 +29,6 @@ bits/stdc++.h
 -
 htree.h
 /Users/wangqiankai/projects/work3/htree.h
+BM.h
+/Users/wangqiankai/projects/work3/BM.h
 

@@ -10,6 +10,7 @@ struct treenode{
     treenode* lson{};
     treenode* rson{};
     treenode* par{};
+    treenode* addr{};
     treenode(){
         ch = 0;
         lson = nullptr;
@@ -47,14 +48,15 @@ public:
 
 
     void build();
-    std::string decode(std::string s);
-    void stistic(const std::string& s);
+    std::string decode(const std::string& s);
+    void statistic(const std::string& s);
 };
 
 class h_code{
 private:
-    std::unordered_map<char, std::string> dic;
+    //std::unordered_map<char, std::string> dic;
 public:
+    std::unordered_map<char, std::string> dic;
     static void find(h_tree h, int s, std::string& aws);
     void build(h_tree h);
 };

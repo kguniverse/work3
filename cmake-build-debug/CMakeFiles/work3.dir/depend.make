@@ -7,6 +7,7 @@ CMakeFiles/work3.dir/BM.cpp.o: ../BM.h
 CMakeFiles/work3.dir/htree.cpp.o: ../htree.cpp
 CMakeFiles/work3.dir/htree.cpp.o: ../htree.h
 
+CMakeFiles/work3.dir/main.cpp.o: ../BM.h
 CMakeFiles/work3.dir/main.cpp.o: ../htree.h
 CMakeFiles/work3.dir/main.cpp.o: ../main.cpp
 

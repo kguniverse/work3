@@ -6,9 +6,14 @@ using namespace std;
 
 string read(){
     string ret;
-    ifstream txtin("a.txt");
-    if(!txtin.is_open()) cout << "未能打开文件" << endl;
-    getline(txtin, ret, '\n');
+    ifstream txtin;
+    txtin.open("a.txt", ios::in);
+    if(!txtin.is_open()) {
+        cout << "未能打开文件" << endl;
+        return ret;
+    }
+    getline(txtin, ret);
+    //cout << ret << endl;
     while(!txtin.eof()){
         string cd;
         getline(txtin, cd);
@@ -19,11 +24,14 @@ string read(){
 //TODO: prepare search function
 void encode(){
     string readin = read();
+    cout << readin << endl;
     h_tree h;
-    h.stistic(readin);
+    h.statistic(readin);
     h.build();
     h_code H_table;
     H_table.build(h);
+    for(int i = 1; i <= 255; i++) cout << i << ":::" << H_table.dic[i] << endl;
+
 }
 void decode(){
     string readin = read();
