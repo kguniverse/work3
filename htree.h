@@ -47,6 +47,7 @@ public:
     treenode* find_node(int i) { return body + i; }
 
 
+
     void build();
     std::string decode(const std::string& s);
     void statistic(const std::string& s);
@@ -59,5 +60,6 @@ public:
     std::unordered_map<char, std::string> dic;
     static void find(h_tree h, int s, std::string& aws);
     void build(h_tree h);
+    std::string encode(std::string);
 };
 #endif //WORK3_HTREE_H

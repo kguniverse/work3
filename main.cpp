@@ -21,21 +21,57 @@ string read(){
     }
     return ret;
 }
+void write(const string& s){
+    ofstream txtout;
+    txtout.open("a1.txt", ios::out);
+    if(!txtout.is_open()) {
+        cout << "未能打开文件2" << endl;
+        return;
+    }
+    txtout << s;
+}
 //TODO: prepare search function
+void search(h_code table, const string& txt){
+
+    printf("which mode do you want to choose?[s(single word)/m(multiple words)]\n");
+    char op;
+    cin >> op;
+    if(op == 's'){
+        string s;
+        cin >> s;
+        s = table.encode(s);
+        BM ser;
+        ser.generate(s);
+        vector<int> aws = ser.search(s, txt);
+    }
+}
 void encode(){
+    h_tree h;
+    h_code H_table;
     string readin = read();
     cout << readin << endl;
-    h_tree h;
     h.statistic(readin);
     h.build();
-    h_code H_table;
     H_table.build(h);
-    for(int i = 1; i <= 255; i++) cout << i << ":::" << H_table.dic[i] << endl;
+    //for(int i = 1; i <= 255; i++) cout << (char)i << ":::" << H_table.dic[i] << endl;
+    string writeout = H_table.encode(readin);
+    write(writeout);
+    while(true){
+        printf("do you want to search for something?[y / n]\n");
+        char op;
+        cin >> op;
+        if(op == 'y') {
+            search(H_table, writeout);
+            return;
+        }
+        else if(op == 'n') return;
+        else printf("please input again");
+    }
 
 }
 void decode(){
     string readin = read();
-
+   // string aws = h.decode(readin);
 }
 void start(){
     int t;
@@ -44,7 +80,6 @@ void start(){
     printf("2. I want to decode this\n");
     printf("3. quit\n");
     printf("please select:");
-
     cin >> t;
     if(t == 1){
         encode();

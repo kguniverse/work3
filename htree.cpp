@@ -89,3 +89,10 @@ void h_code::build(h_tree h){
         dic[h.find_node(i) -> ch] = aws;
     }
 }
+std::string h_code::encode(std::string s){
+    string aws;
+    for(auto i : s){
+        aws += dic[i];
+    }
+    return aws;
+}

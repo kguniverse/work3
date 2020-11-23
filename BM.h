@@ -10,8 +10,9 @@ private:
     int n;
     std::vector<int> bad_char;
     std::vector<int> good_char;
+    std::vector<int> suffix;
 public:
     void generate(std::string s);
-    //TODO: generate the good mode
+    std::vector<int> search(std::string s, std::string t);
 };
 #endif //WORK3_BM_H
