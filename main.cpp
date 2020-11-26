@@ -26,7 +26,17 @@ string read(){
 }
 void write(const string& s){
     ofstream txtout;
-    string path;
+    string path, s1;
+    int t = 0;
+    while(t <= s.size()){
+        int i = 0, temp = 0;
+        while(i < 8){
+            temp += s[t] - '0';
+            i++;
+            t++;
+        }
+        s1.pb((char)temp);
+    }
     cout << "please write the output path\n";
     cin >> path;
     txtout.open("a1.dat", ios::out|ios::binary);
@@ -35,7 +45,7 @@ void write(const string& s){
         return;
     }
     //for(auto i : s) txtout << i - '0';
-    txtout.write((char*)&s[0], s.size());
+    txtout.write((char*)&s1[0], s.size());
 }
 //TODO: prepare search function
 void search(h_code table, const string& txt){

@@ -11,6 +11,7 @@ struct treenode{
     treenode* rson{};
     treenode* par{};
     treenode* addr{};
+    //构造函数
     treenode(){
         ch = 0;
         lson = nullptr;
@@ -21,6 +22,7 @@ struct treenode{
         lson = nullptr;
         rson = nullptr;
     }
+    //运算符重载，方便排序
     bool operator<(const treenode& a) const{
         if(weight == a.weight) return ch > a.ch;
         return weight > a.weight;
@@ -36,13 +38,13 @@ private:
     treenode* body;
 public:
     h_tree(){
-        root = NULL;
-        body = NULL;
+        root = nullptr;
+        body = nullptr;
         n = 0;
-        memset(frequency, sizeof(frequency), 0);
+        memset(frequency, 0, sizeof(frequency));
     }
 
-    int size(){ return n; }
+    int size() const{ return n; }
     treenode* find_root() { return root; }
     treenode* find_node(int i) { return body + i; }
 

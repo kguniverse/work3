@@ -8,6 +8,7 @@ using namespace std;
 #define rep(i, a, b) for(int i = a; i <= b; i++)
 
 void AC::insert(string w, int t){
+    book[t] = w;
     int u = 0;
     for(int i = 0; w[i]; i++){
         if(!tr[u][w[i] - 'a']) tr[u][w[i] - 'a'] = ++tot;
