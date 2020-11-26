@@ -1,1 +1,1 @@
-/usr/local/bin/g++-9  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/work3.dir/main.cpp.o CMakeFiles/work3.dir/htree.cpp.o CMakeFiles/work3.dir/BM.cpp.o  -o work3 
+/usr/local/bin/g++-9  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/work3.dir/main.cpp.o CMakeFiles/work3.dir/htree.cpp.o CMakeFiles/work3.dir/BM.cpp.o CMakeFiles/work3.dir/AC_Automaton.cpp.o  -o work3 

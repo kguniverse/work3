@@ -74,12 +74,12 @@ clean: CMakeFiles/work3.dir/clean
 CMakeFiles/work3.dir/all:
 	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/depend
 	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target work3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target work3"
 .PHONY : CMakeFiles/work3.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/work3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/work3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/work3.dir/rule

@@ -123,6 +123,33 @@ work3/fast:
 	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/build
 .PHONY : work3/fast
 
+AC_Automaton.o: AC_Automaton.cpp.o
+
+.PHONY : AC_Automaton.o
+
+# target to build an object file
+AC_Automaton.cpp.o:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/AC_Automaton.cpp.o
+.PHONY : AC_Automaton.cpp.o
+
+AC_Automaton.i: AC_Automaton.cpp.i
+
+.PHONY : AC_Automaton.i
+
+# target to preprocess a source file
+AC_Automaton.cpp.i:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/AC_Automaton.cpp.i
+.PHONY : AC_Automaton.cpp.i
+
+AC_Automaton.s: AC_Automaton.cpp.s
+
+.PHONY : AC_Automaton.s
+
+# target to generate assembly for a file
+AC_Automaton.cpp.s:
+	$(MAKE) -f CMakeFiles/work3.dir/build.make CMakeFiles/work3.dir/AC_Automaton.cpp.s
+.PHONY : AC_Automaton.cpp.s
+
 BM.o: BM.cpp.o
 
 .PHONY : BM.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... work3"
+	@echo "... AC_Automaton.o"
+	@echo "... AC_Automaton.i"
+	@echo "... AC_Automaton.s"
 	@echo "... BM.o"
 	@echo "... BM.i"
 	@echo "... BM.s"

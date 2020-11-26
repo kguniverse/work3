@@ -1,13 +1,16 @@
 #include<bits/stdc++.h>
 #include"htree.h"
 #include"BM.h"
+#include"AC_Automaton.h"
 using namespace std;
 #define pb push_back
 
 string read(){
-    string ret;
+    string ret, path;
     ifstream txtin;
-    txtin.open("a.txt", ios::in);
+    cout << "please write the input path\n";
+    cin >> path;
+    txtin.open(path, ios::in);
     if(!txtin.is_open()) {
         cout << "未能打开文件" << endl;
         return ret;
@@ -23,12 +26,16 @@ string read(){
 }
 void write(const string& s){
     ofstream txtout;
-    txtout.open("a1.txt", ios::out);
+    string path;
+    cout << "please write the output path\n";
+    cin >> path;
+    txtout.open("a1.dat", ios::out|ios::binary);
     if(!txtout.is_open()) {
         cout << "未能打开文件2" << endl;
         return;
     }
-    txtout << s;
+    //for(auto i : s) txtout << i - '0';
+    txtout.write((char*)&s[0], s.size());
 }
 //TODO: prepare search function
 void search(h_code table, const string& txt){
@@ -43,6 +50,25 @@ void search(h_code table, const string& txt){
         BM ser;
         ser.generate(s);
         vector<int> aws = ser.search(s, txt);
+        for(auto i : aws) cout << i << endl;
+    } else if(op == 'm'){
+        printf("how many strings do you want to search ?");
+        int n;
+        cin >> n;
+        if(n > 10000){
+            printf("sorry, too many words\n");
+            return;
+        }
+        printf("please input the strings\n");
+        AC ser;
+        for(int i = 0; i <= n; i++){
+            string s;
+            cin >> s;
+            s = table.encode(s);
+            ser.insert(s, i);
+        }
+        ser.build();
+        vector<vector<int>> aws = ser.query(txt);
     }
 }
 void encode(){
@@ -55,6 +81,7 @@ void encode(){
     H_table.build(h);
     //for(int i = 1; i <= 255; i++) cout << (char)i << ":::" << H_table.dic[i] << endl;
     string writeout = H_table.encode(readin);
+    cout << writeout << endl;
     write(writeout);
     while(true){
         printf("do you want to search for something?[y / n]\n");

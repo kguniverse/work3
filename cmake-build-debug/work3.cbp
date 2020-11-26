@@ -92,6 +92,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/wangqiankai/projects/work3/AC_Automaton.cpp">
+			<Option target="work3"/>
+		</Unit>
+		<Unit filename="/Users/wangqiankai/projects/work3/AC_Automaton.h">
+			<Option target="work3"/>
+		</Unit>
 		<Unit filename="/Users/wangqiankai/projects/work3/BM.cpp">
 			<Option target="work3"/>
 		</Unit>
