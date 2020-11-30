@@ -31,21 +31,24 @@ void write(const string& s){
     while(t <= s.size()){
         int i = 0, temp = 0;
         while(i < 8){
-            temp += s[t] - '0';
+            temp = 2 * temp + s[t] - '0';
             i++;
             t++;
         }
         s1.pb((char)temp);
     }
+    for(auto i : s1) cout << i;
+    cout << endl;
     cout << "please write the output path\n";
     cin >> path;
-    txtout.open("a1.dat", ios::out|ios::binary);
+    txtout.open(path, ios::out);
     if(!txtout.is_open()) {
         cout << "未能打开文件2" << endl;
         return;
     }
     //for(auto i : s) txtout << i - '0';
-    txtout.write((char*)&s1[0], s.size());
+//    txtout.write((char*)&s1[0], s.size());
+    txtout << s1;
 }
 //TODO: prepare search function
 void search(h_code table, const string& txt){
