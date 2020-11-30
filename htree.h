@@ -62,6 +62,6 @@ public:
     std::unordered_map<char, std::string> dic;
     static void find(h_tree h, int s, std::string& aws);
     void build(h_tree h);
-    std::string encode(std::string);
+    std::string encode(const std::string&);
 };
 #endif //WORK3_HTREE_H

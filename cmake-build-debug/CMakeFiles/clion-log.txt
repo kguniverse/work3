@@ -1,15 +1,50 @@
-"/Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/201.7846.88/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-9 -G "CodeBlocks - Unix Makefiles" /Users/wangqiankai/projects/work3
-CMake Warning at /Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/201.7846.88/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/Platform/Darwin-Initialize.cmake:131 (message):
+"/Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-9 -G "CodeBlocks - Unix Makefiles" /Users/wangqiankai/projects/work3
+CMake Warning at /Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/Platform/Darwin-Initialize.cmake:286 (message):
   Ignoring CMAKE_OSX_SYSROOT value:
 
    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 
   because the directory does not exist.
 Call Stack (most recent call first):
-  /Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/201.7846.88/CLion.app/Contents/bin/cmake/mac/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake:21 (include)
+  /Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake:21 (include)
   CMakeLists.txt:2 (project)
 
 
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/wangqiankai/projects/work3/cmake-build-debug
+-- The C compiler identification is AppleClang 12.0.0.12000032
+-- The CXX compiler identification is GNU 9.3.0
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - broken
+CMake Error at /Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeTestCCompiler.cmake:60 (message):
+  The C compiler
+
+    "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: /Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):/usr/bin/make cmTC_5a9de/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_5a9de.dir/build.make CMakeFiles/cmTC_5a9de.dir/build
+    Building C object CMakeFiles/cmTC_5a9de.dir/testCCompiler.c.o
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_5a9de.dir/testCCompiler.c.o   -c /Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+    Linking C executable cmTC_5a9de
+    "/Users/wangqiankai/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/202.8194.17/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E cmake_link_script CMakeFiles/cmTC_5a9de.dir/link.txt --verbose=1
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5a9de.dir/testCCompiler.c.o  -o cmTC_5a9de 
+    ld: library not found for -lSystem
+    clang: error: linker command failed with exit code 1 (use -v to see invocation)
+    make[1]: *** [cmTC_5a9de] Error 1
+    make: *** [cmTC_5a9de/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/Users/wangqiankai/projects/work3/cmake-build-debug/CMakeFiles/CMakeError.log".

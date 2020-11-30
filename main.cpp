@@ -57,9 +57,12 @@ void search(h_code table, const string& txt){
         string s;
         cin >> s;
         s = table.encode(s);
-        BM ser;
+        BM ser; //build a search class
         ser.generate(s);
+
         vector<int> aws = ser.search(s, txt);
+        //generate the answer table
+
         for(auto i : aws) cout << i << endl;
     } else if(op == 'm'){
         printf("how many strings do you want to search ?");
@@ -70,7 +73,7 @@ void search(h_code table, const string& txt){
             return;
         }
         printf("please input the strings\n");
-        AC ser;
+        AC ser; //build a search class
         for(int i = 0; i <= n; i++){
             string s;
             cin >> s;
@@ -78,20 +81,23 @@ void search(h_code table, const string& txt){
             ser.insert(s, i);
         }
         ser.build();
+
         vector<vector<int>> aws = ser.query(txt);
+        //generate the answer table
+
     }
 }
 void encode(){
     h_tree h;
     h_code H_table;
     string readin = read();
-    cout << readin << endl;
+//    cout << readin << endl;
     h.statistic(readin);
     h.build();
     H_table.build(h);
-    //for(int i = 1; i <= 255; i++) cout << (char)i << ":::" << H_table.dic[i] << endl;
+//    for(int i = 1; i <= 255; i++) cout << (char)i << ":::" << H_table.dic[i] << endl;
     string writeout = H_table.encode(readin);
-    cout << writeout << endl;
+//    cout << writeout << endl;
     write(writeout);
     while(true){
         printf("do you want to search for something?[y / n]\n");
@@ -102,7 +108,7 @@ void encode(){
             return;
         }
         else if(op == 'n') return;
-        else printf("please input again");
+        else printf("input error");
     }
 
 }
@@ -114,14 +120,18 @@ void start(){
     int t;
     printf("what do you want to do with your text?\n");
     printf("1. I want to encode this\n");
-    printf("2. I want to decode this\n");
+    printf("2. I want to decode this[to be done]\n");
     printf("3. quit\n");
     printf("please select:");
     cin >> t;
     if(t == 1){
+
         encode();
+
     } else if(t == 2){
+
         decode();
+
     } else if(t == 3){
         printf("thank you for using this system");
         exit(0);
