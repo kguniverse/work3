@@ -37,8 +37,8 @@ void write(const string& s){
         }
         s1.pb((char)temp);
     }
-    for(auto i : s1) cout << i;
-    cout << endl;
+//    for(auto i : s1) cout << i;
+//    cout << endl;
     cout << "please write the output path\n";
     cin >> path;
     txtout.open(path, ios::out);
